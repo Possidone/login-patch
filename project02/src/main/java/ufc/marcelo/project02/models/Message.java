@@ -14,11 +14,11 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String content;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "sender_id", referencedColumnName = "id")
+    @ManyToOne()
+    @JoinColumn(name = "sender_id")
     private User sender;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "receiver_id", referencedColumnName = "id")
+    @ManyToOne()
+    @JoinColumn(name = "receiver_id")
     private User receiver;
 
     private Date createdAt;

@@ -24,6 +24,7 @@ public class UserController {
 
     @PostMapping("/create")
     public ResponseEntity<GenericResult> create(@RequestBody CreateUser createUser) {
+        System.out.println(createUser);
         try {
             boolean userExists = userServices.emailExists(createUser.email());
 
@@ -32,7 +33,7 @@ public class UserController {
                 return ResponseEntity.badRequest().body(result);
             }
 
-            userServices.create(createUser.name(), createUser.urlImage(), createUser.email(), createUser.password());
+            userServices.create(createUser.name(), createUser.urlImage(), createUser.email(), createUser.password(), createUser.gender());
 
             GenericResult result = new GenericResult(true, "User created", null);
 
@@ -43,7 +44,7 @@ public class UserController {
         }
     }
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     public ResponseEntity<GenericResult> login(@RequestBody LoginUser login) {
         try {
             boolean userExists = userServices.emailAndPasswordExists(login.email(), login.password());

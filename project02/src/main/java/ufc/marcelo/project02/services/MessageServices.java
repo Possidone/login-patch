@@ -25,7 +25,7 @@ public class MessageServices {
         messageRepository.save(message);
     }
 
-    public List<Message> getAll(int sernder, int receiver) {
-        return messageRepository.findMessagesBySenderIdAndReceiverId(sernder, receiver);
+    public List<Message> getAll(int senderId, int receiverId) {
+        return messageRepository.findMessagesBySenderIdAndReceiverId(senderId, receiverId);
     }
 }

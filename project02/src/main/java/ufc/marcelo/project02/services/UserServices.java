@@ -18,8 +18,8 @@ public class UserServices {
         this.userRepository = userRepository;
     }
 
-    public void create(String name, String urlImage, String email, String password) {
-        User user = new User(name, urlImage, email, password);
+    public void create(String name, String urlImage, String email, String password, String gender) {
+        User user = new User(name, urlImage, email, password, gender);
         userRepository.save(user);
     }
 
@@ -38,7 +38,7 @@ public class UserServices {
 
         for (User user : users) {
 
-            SimpleUser simpleUser = new SimpleUser(user.getId(), user.getName(), user.getUrlImage(), user.getEmail());
+            SimpleUser simpleUser = new SimpleUser(user.getId(), user.getName(), user.getUrlImage(), user.getEmail(), user.getGender());
 
             simpleUsers.add(simpleUser);
         }
