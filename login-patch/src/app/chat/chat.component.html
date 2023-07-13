@@ -53,15 +53,15 @@
       margin-bottom: 10px;
     }
 
-    .message.sender {
+    .sender {
       text-align: right;
     }
 
-    .message.sender .message-content {
+    .sender .message-content {
       background-color: #d4e9ff;
     }
 
-    .message.receiver .message-content {
+    .receiver .message-content {
       background-color: #eaeaea;
     }
 
@@ -103,23 +103,21 @@
     </div>
 
     <div class="message-container">
-      <div class="message receiver">
-        <div class="message-content">
-          <p>Mensage of user</p>
+      <div *ngFor="let m of messages">
+        <div [ngClass]="{
+          'message sender': m.sender.id === senderId,
+          'message receiver': m.receiver.id === senderId
+          }">
+          <div class="message-content">
+            <p>{{ m.content }}</p>
+          </div>
         </div>
-      </div>
-
-    <div class="message sender">
-      <div class="message-content">
-        <p>Mensage send for you</p>
-    </div>
-
       </div>
     </div>
 
     <div class="new-message-container">
-      <input type="text" class="new-message-input" placeholder="type a new message">
-      <button class="new-message-button">Send</button>
+      <input type="text" class="new-message-input" placeholder="type a new message"  [(ngModel)]="message">
+      <button class="new-message-button" (click)="sendMessage()">Send</button>
     </div>
   </div>
 </body>
