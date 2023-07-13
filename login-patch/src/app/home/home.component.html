@@ -7,7 +7,7 @@ h1 {
   font-family: 'Roboto', Arial, sans-serif;
 }
 
-h2 {
+.name {
   color: #2196F3;
   font-size: 14px;
   font-family: 'Roboto', Arial, sans-serif;
@@ -83,11 +83,12 @@ h2 {
 
 <div class="user-profile">
   <img src="{{ urlImage }}">
-  <h2>{{ nameUser }}</h2>
+  <h2 class="name">{{ nameUser }}</h2>
 </div>
 
 <div class="card-list" >
   <div *ngFor="let user of userList">
-    <img src="{{ user.urlImage }}">
+    <img src="{{ user.urlImage }}"  (click)="myClick(user.id)">
+    <h4 class="name">{{ user.name }}</h4>
   </div>
 </div>

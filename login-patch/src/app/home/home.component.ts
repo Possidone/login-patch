@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit  {
   passedData: any;
   searchTerm: string = "";
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     this.searchTerm = '';
   }
 
@@ -35,6 +35,7 @@ export class HomeComponent implements OnInit  {
 
         localStorage.setItem("name", this.nameUser);
         localStorage.setItem("url", this.urlImage);
+        localStorage.setItem("userId", user.id);
       },
       (error) => {
         console.log(error);
@@ -52,5 +53,11 @@ export class HomeComponent implements OnInit  {
     this.userList = this.filteredUserList.filter(user =>
       user.name.toLowerCase().includes(this.searchTerm.toLowerCase() || user.email.toLowerCase().includes(this.searchTerm.toLowerCase()))
     );
+  }
+
+  myClick(receiverId: number) {
+    localStorage.setItem("receiverId", receiverId.toString());
+
+    this.router.navigate(['/chat']);
   }
 }
