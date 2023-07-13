@@ -59,10 +59,10 @@ public class MessageController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<Message>> GetMessages(@RequestBody GetMessages getMessages) {
+    public ResponseEntity<List<Message>> GetMessages(@RequestParam("sender") int sender, @RequestParam("receiver") int receiver) {
 
         try {
-            List<Message> messages = messageServices.getAll(getMessages.sender(), getMessages.receiver());
+            List<Message> messages = messageServices.getAll(sender, receiver);
 
             return ResponseEntity.ok().body(messages);
         }catch (Exception e) {
