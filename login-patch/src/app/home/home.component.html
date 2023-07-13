@@ -1,1 +1,9 @@
-<p>home works!</p>
+<h1>{{ nameUser }}</h1>
+<h1>{{ urlImage }}</h1>
+
+<ul>
+    <li *ngFor="let user of userList">
+      <span>{{ user.name }}</span>
+      <span>{{ user.email }}</span>
+    </li>
+</ul>

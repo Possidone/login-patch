@@ -18,6 +18,9 @@ export class LoginComponent {
       response => {
         console.log(response);
         if (response.Success) {
+
+          localStorage.setItem('email', this.email);
+
           this.router.navigate(['/home']);
         }
       },

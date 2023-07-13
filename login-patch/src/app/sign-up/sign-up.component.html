@@ -38,8 +38,7 @@
     margin-bottom: 5px;
   }
 
-  input[type="email"],
-  input[type="password"] {
+  input {
     width: 95%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -87,16 +86,21 @@
   <h1>Only Chat</h1>
   <form action="">
     <label for="email">Email</label>
-    <input name="email" type="email" placeholder="Informe seu e-mail aqui" [(ngModel)]="email" autocomplete="off">
+    <input name="email" type="email" placeholder="Informe seu e-mail" [(ngModel)]="email" autocomplete="off">
     <label for="name">Nome</label>
-    <input name="senha" type="password" placeholder="Informe sua senha aqui" [(ngModel)]="password" autocomplete="off">
-    <label for="name">Upload da foto</label>
-    <a href="">Upload da foto</a>
+    <input name="senha" type="text" placeholder="Informe seu nome" [(ngModel)]="name" autocomplete="off">
+    <label for="name">Url da imagem</label>
+    <input name="senha" type="text" placeholder="Informe a URL" [(ngModel)]="urlImage" autocomplete="off">
+    <select [(ngModel)]="gender" name="gender" [ngModelOptions]="{ standalone: true }">
+      <option [selected]="true" value="Masculino">Masculino</option>
+      <option value="Feminino">Feminino</option>
+    </select>
     <label for="password">Senha</label>
-    <input name="senha" type="password" placeholder="Informe sua senha aqui" [(ngModel)]="password" autocomplete="off">
+    <input name="senha" type="password" placeholder="Informe sua senha" [(ngModel)]="password" autocomplete="off">
     <label for="password">Digite Novamente a Senha</label>
-    <input name="senha" type="password" placeholder="Informe sua senha aqui" [(ngModel)]="password" autocomplete="off">
-    <button type="submit">Cadastre-se</button>
+    <input name="senha" type="password" placeholder="Informe sua confirmação de senha" [(ngModel)]="confirmPassword" autocomplete="off">
+    <button type="submit" (click)="create()">Cadastre-se</button>
   </form>
+  <a routerLink="/">login</a>
 </div>
 </body>

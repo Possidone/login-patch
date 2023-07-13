@@ -17,4 +17,16 @@ export class APIService {
     };
     return this.http.post(`${this.apiUrl}user/login`, payload);
   }
+
+  createAccount(email: String, password: String, urlImage: String, name: String, gender: String): Observable<any> {
+    const payload = {
+        email: email,
+        password: password,
+        urlImage: urlImage,
+        name: name,
+        gender: gender
+      };
+
+      return this.http.post(`${this.apiUrl}user/create`, payload);
+  }
 }
