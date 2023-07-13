@@ -1,18 +1,126 @@
-<h1>OnlyChat</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat</title>
+  <style>
+    h1 {
+      color: #2196F3;
+      font-size: 34px;
+      margin-left: 40%;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
 
-<div class="search-bar">
-  <input type="text" placeholder="Buscar">
-  <button>Buscar</button>
-</div>
+    h2 {
+      color: #2196F3;
+      font-size: 14px;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
 
-<div class="user-profile">
-  <img src="caminho-da-foto-do-usuario" alt="Foto do usuário">
-  <span>Nome do Usuário</span>
-</div>
+    .chat-container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: Arial, sans-serif;
+    }
 
-<div class="card-list">
-  <div class="card">
-    <img src="caminho-da-foto-aleatoria" alt="Foto aleatória">
+    .chat-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .chat-header img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .chat-header h2 {
+      margin: 0;
+    }
+
+    .message-container {
+      max-height: 300px;
+      overflow-y: scroll;
+    }
+
+    .message {
+      margin-bottom: 10px;
+    }
+
+    .message.sender {
+      text-align: right;
+    }
+
+    .message.sender .message-content {
+      background-color: #d4e9ff;
+    }
+
+    .message.receiver .message-content {
+      background-color: #eaeaea;
+    }
+
+    .message-content {
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    .new-message-container {
+      display: flex;
+      margin-top: 10px;
+    }
+
+    .new-message-input {
+      flex-grow: 1;
+      padding: 5px;
+      border-radius: 5px 0 0 5px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    .new-message-button {
+      padding: 5px 10px;
+      border-radius: 0 5px 5px 0;
+      border: none;
+      background-color: #2196f3;
+      color: #fff;
+      cursor: pointer;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Only Chat</h1>
+  <div class="chat-container">
+    <div class="chat-header">
+      <img src="https://img.freepik.com/fotos-gratis/menina-morena-bonita-carismatica-com-capuz-laranja-sorrindo-e-olhando-para-a-tela-do-celular-enquanto-envia-mensagens-de-texto-troca-mensagens-com-o-namorado-usa-o-aplicativo-do-telefone_176420-42000.jpg?w=1380&t=st=1689216545~exp=1689217145~hmac=903c83052be1c4040bcc2a35acc2b4cce45213e1d4c3cafc25ca296398b5ef2f" alt="Foto do usuário">
+      <h2>Username</h2>
+    </div>
+
+    <div class="message sender">
+      <div class="message-content">
+        <p>Mensage send for you</p>
+    </div>
+    <br>
+    <div class="message-container">
+      <div class="message receiver">
+        <div class="message-content">
+          <p>Mensage of user</p>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="new-message-container">
+      <input type="text" class="new-message-input" placeholder="type a new message">
+      <button class="new-message-button">Send</button>
+    </div>
   </div>
-</div>
+</body>
+</html>
 
