@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { HomeComponent } from './home/home.component';
 
+
 const routes: Routes = [
   {
     path: "login",
@@ -17,7 +18,7 @@ const routes: Routes = [
     path: "",
     component: HomeComponent,
     pathMatch: "full"
-  }
+  },
 ];
 
 @NgModule({
