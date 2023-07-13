@@ -89,11 +89,19 @@
     <label for="email">Email</label>
     <input name="email" type="email" placeholder="enter your e-mail here" [(ngModel)]="email" autocomplete="off">
     <label for="name">Name</label>
-    <input name="senha" type="password" placeholder="enter your password here" [(ngModel)]="password" autocomplete="off">
+    <input name="password" type="password" placeholder="enter your name here" [(ngModel)]="password" autocomplete="off">
+    <label for="genero">Gênero:</label>
+    <br>
+    <select id="genero" name="genero">
+      <option value="masculino">Masculino</option>
+      <option value="feminino">Feminino</option>
+    </select>
+    <br>
+    <br>
     <label for="name">Upload picture</label>
     <a href="">Upload Picture</a>
     <label for="password">Password</label>
-    <input name="senha" type="password" placeholder="enter your password here" [(ngModel)]="password" autocomplete="off">
+    <input name="senha" type="password" placeholder="type your password again here" [(ngModel)]="password" autocomplete="off">
     <label for="password">Type again your password</label>
     <input name="senha" type="password" placeholder="type again your password" [(ngModel)]="password" autocomplete="off">
     <button type="submit">Register</button>
