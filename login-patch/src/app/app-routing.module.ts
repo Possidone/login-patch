@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
-    path: "",
+    path: "login",
     component: LoginComponent
   },
   {
@@ -15,10 +15,15 @@ const routes: Routes = [
     component: SignUpComponent
   },
   {
-    path: "home",
+    path: "",
     component: HomeComponent,
     pathMatch: "full"
   },
+  {
+    path: "chat",
+    component: HomeComponent,
+    pathMatch: "full"
+  }
 ];
 
 @NgModule({

@@ -85,21 +85,21 @@
 <div class="container">
   <h1>Only Chat</h1>
   <form action="">
-    <label for="email">Email</label>
-    <input name="email" type="email" placeholder="Informe seu e-mail" [(ngModel)]="email" autocomplete="off">
-    <label for="name">Nome</label>
-    <input name="senha" type="text" placeholder="Informe seu nome" [(ngModel)]="name" autocomplete="off">
-    <label for="name">Url da imagem</label>
-    <input name="senha" type="text" placeholder="Informe a URL" [(ngModel)]="urlImage" autocomplete="off">
+    <label for="email">E-mail</label>
+    <input name="email" type="email" placeholder="Enter your e-mail here" [(ngModel)]="email" autocomplete="off">
+    <label for="name">Name</label>
+    <input name="senha" type="text" placeholder="Enter your name here" [(ngModel)]="name" autocomplete="off">
+    <label for="name">Image url</label>
+    <input name="senha" type="text" placeholder="Enter your URL here" [(ngModel)]="urlImage" autocomplete="off">
     <select [(ngModel)]="gender" name="gender" [ngModelOptions]="{ standalone: true }">
-      <option [selected]="true" value="Masculino">Masculino</option>
-      <option value="Feminino">Feminino</option>
+      <option [selected]="true" value="masculine">Masculine</option>
+      <option value="feminine">Feminine</option>
     </select>
-    <label for="password">Senha</label>
-    <input name="senha" type="password" placeholder="Informe sua senha" [(ngModel)]="password" autocomplete="off">
-    <label for="password">Digite Novamente a Senha</label>
-    <input name="senha" type="password" placeholder="Informe sua confirmação de senha" [(ngModel)]="confirmPassword" autocomplete="off">
-    <button type="submit" (click)="create()">Cadastre-se</button>
+    <label for="password">Password</label>
+    <input name="senha" type="password" placeholder="Enter your password here" [(ngModel)]="password" autocomplete="off">
+    <label for="password">Enter the password again</label>
+    <input name="senha" type="password" placeholder="Type again your password" [(ngModel)]="confirmPassword" autocomplete="off">
+    <button type="submit" (click)="create()">Register</button>
   </form>
   <a routerLink="/">login</a>
 </div>

@@ -11,9 +11,13 @@ export class HomeComponent implements OnInit  {
   nameUser: string = "";
   urlImage: string = "";
   userList: any[] = [];
+  filteredUserList: any[] = [];
   passedData: any;
+  searchTerm: string = "";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.searchTerm = '';
+  }
 
   ngOnInit() {
     this.fetchUserList();
@@ -27,6 +31,7 @@ export class HomeComponent implements OnInit  {
         const user = response.find(user => user.email == email);
         this.nameUser = user.name;
         this.urlImage = user.urlImage;
+        this.filteredUserList = response.filter(user => user.email !== email);
 
         localStorage.setItem("name", this.nameUser);
         localStorage.setItem("url", this.urlImage);
@@ -34,6 +39,18 @@ export class HomeComponent implements OnInit  {
       (error) => {
         console.log(error);
       }
+    );
+  }
+
+  filterUserList() {
+
+    if(this.searchTerm.trim() == "") {
+      this.userList = this.filteredUserList;
+      return;
+    }
+
+    this.userList = this.filteredUserList.filter(user =>
+      user.name.toLowerCase().includes(this.searchTerm.toLowerCase() || user.email.toLowerCase().includes(this.searchTerm.toLowerCase()))
     );
   }
 }
